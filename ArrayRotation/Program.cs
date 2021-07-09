@@ -17,33 +17,59 @@ namespace ArrayRotation
                 return gcd(b, a % b);
             }
         }
-
-        static void arrayRotation(List<int> arr, int size, int dir, int pos)
+        
+        // Inplace array rotation
+        // Time Complexity: O(size * pos)
+        // Space Complexity: O(1)
+        static void arrayRotation(List<int> arr, int size, int pos)
         {
-            int gcd_value = gcd(size, pos);
+            for (int i = 0; i < pos; i++)
+            {
+                int temp = arr[0];
+                int j = 0;
+                while (j < size-1)
+                {
+                    arr[j] = arr[(j + 1) % size];
+                    j += 1;
+                }
+                arr[j] = temp;
+            }
+        }
+
+        // Inplace array rotation using juggling algorithm
+        // Time Complexity: O(size)
+        // Space Complexity: O(1)
+        static void arrayRotattionGCD(List<int> arr, int size, int pos)
+        {
+            int gcd_value = gcd(pos, size);
             for (int i = 0; i < gcd_value; i++)
             {
                 int temp = arr[i];
                 int j = i;
-                while (true)
+                while ((j + pos) % size != i)
                 {
-                    int k = j + pos;
-                    
                     arr[j] = arr[(j + pos) % size];
+                    j = (j + pos) % size;
                 }
+                arr[j] = temp;
+            }
+        }
+
+        static void printArray(List<int> arr)
+        {
+            foreach (int item in arr)
+            {
+                Console.Write(item + " ");
             }
         }
 
         static void Main(string[] args)
         {
             List<int> arr = new List<int>();
-            int dir, pos, size;
+            int pos, size;
 
             Console.Write("Enter size of array: ");
             size = Convert.ToInt32(Console.ReadLine());
-
-            Console.Write("Enter direction for rotation: ");
-            dir = Convert.ToInt32(Console.ReadLine());
 
             Console.Write("Enter number of rotations: ");
             pos = Convert.ToInt32(Console.ReadLine());
@@ -54,8 +80,8 @@ namespace ArrayRotation
                 arr.Add(Convert.ToInt32(Console.ReadLine()));
             }
 
-            arrayRotation(arr, size, dir, pos);
-
+            arrayRotattionGCD(arr, size, pos);
+            printArray(arr);
         }
     }
 }
