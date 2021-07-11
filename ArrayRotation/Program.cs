@@ -6,7 +6,7 @@ namespace ArrayRotation
     class Program
     {
 
-        static int gcd(int a, int b)
+        static int GCD(int a, int b)
         {
             if (b == 0)
             {
@@ -14,14 +14,14 @@ namespace ArrayRotation
             } 
             else
             {
-                return gcd(b, a % b);
+                return GCD(b, a % b);
             }
         }
         
         // Inplace array rotation
         // Time Complexity: O(size * pos)
         // Space Complexity: O(1)
-        static void arrayRotation(List<int> arr, int size, int pos)
+        static void Rotation(List<int> arr, int size, int pos)
         {
             for (int i = 0; i < pos; i++)
             {
@@ -39,9 +39,9 @@ namespace ArrayRotation
         // Inplace array rotation using juggling algorithm
         // Time Complexity: O(size)
         // Space Complexity: O(1)
-        static void arrayRotattionGCD(List<int> arr, int size, int pos)
+        static void RotationGCD(List<int> arr, int size, int pos)
         {
-            int gcd_value = gcd(pos, size);
+            int gcd_value = GCD(pos, size);
             for (int i = 0; i < gcd_value; i++)
             {
                 int temp = arr[i];
@@ -55,7 +55,7 @@ namespace ArrayRotation
             }
         }
 
-        static void printArray(List<int> arr)
+        static void PrintArray(List<int> arr)
         {
             foreach (int item in arr)
             {
@@ -63,9 +63,9 @@ namespace ArrayRotation
             }
         }
 
-        static void Main(string[] args)
+        static void Main()
         {
-            List<int> arr = new List<int>();
+            List<int> arr = new();
             int pos, size;
 
             Console.Write("Enter size of array: ");
@@ -80,8 +80,9 @@ namespace ArrayRotation
                 arr.Add(Convert.ToInt32(Console.ReadLine()));
             }
 
-            arrayRotattionGCD(arr, size, pos);
-            printArray(arr);
+            RotationGCD(arr, size, pos);
+            Rotation(arr, size, pos);
+            PrintArray(arr);
         }
     }
 }
