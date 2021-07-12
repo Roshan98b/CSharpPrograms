@@ -6,14 +6,14 @@ namespace Sorting
     public class QuickSort
     {
 
-        private static void _Swap(List<int> arr, int a, int b)
+        private static void Swap(List<int> arr, int a, int b)
         {
             int temp = arr[a];
             arr[a] = arr[b];
             arr[b] = temp;
         }
 
-        private static int _Partition(List<int> arr, int low, int high)
+        private static int Partition(List<int> arr, int low, int high)
         {
             int i = low - 1;
             int j = high + 1;
@@ -32,7 +32,7 @@ namespace Sorting
                 {
                     return j;
                 }
-                _Swap(arr, i, j);
+                Swap(arr, i, j);
             }
         }
 
@@ -49,7 +49,7 @@ namespace Sorting
         {
             if (low < high)
             {
-                int p = _Partition(arr, low, high);
+                int p = Partition(arr, low, high);
                 Sort(arr, low, p);
                 Sort(arr, p + 1, high);
             }

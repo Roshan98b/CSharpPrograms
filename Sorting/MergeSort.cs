@@ -5,7 +5,7 @@ namespace Sorting
 {
     public class MergeSort
     {
-        private static void _Merge(List<int> arr, int low, int mid, int high)
+        private static void Merge(List<int> arr, int low, int mid, int high)
         {
             int lSize = mid + 1 - low;
             int rSize = high - mid;
@@ -54,7 +54,7 @@ namespace Sorting
                 int mid = (int)(low + high) / 2;
                 Sort(arr, low, mid);
                 Sort(arr, mid + 1, high);
-                _Merge(arr, low, mid, high);
+                Merge(arr, low, mid, high);
             }
         }
 
