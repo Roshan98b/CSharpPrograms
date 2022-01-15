@@ -266,7 +266,7 @@ namespace Collection
             else
             {
                 this.InOrderDisplay(root.Left);
-                Console.WriteLine($"{root.Item }");
+                Console.WriteLine($"{root.Item} ");
                 this.InOrderDisplay(root.Right);
             }
         }
@@ -276,7 +276,7 @@ namespace Collection
             if (root == null) return;
             else
             {
-                Console.WriteLine($"{root.Item }");
+                Console.WriteLine($"{root.Item} ");
                 this.PreOrderDisplay(root.Left);
                 this.PreOrderDisplay(root.Right);
             }
@@ -289,7 +289,7 @@ namespace Collection
             {
                 this.PostOrderDisplay(root.Left);
                 this.PostOrderDisplay(root.Right);
-                Console.WriteLine($"{root.Item }");
+                Console.WriteLine($"{root.Item} ");
             }
         }
     }
