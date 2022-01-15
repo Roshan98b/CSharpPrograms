@@ -16,7 +16,60 @@ namespace Collection
             this.Root = null;
         }
 
-        public void Insert(Node<T> root, T item)
+        public void Insert(T item)
+        {
+            this.Insert(this.Root, item);
+        }
+
+        public void DeleteTree()
+        {
+            this.DeleteTree(this.Root);
+        }
+
+        public bool IsInTree(T item)
+        {
+            return this.IsInTree(this.Root, item);
+        }
+
+        public int GetHeight()
+        {
+            return this.GetHeight(this.Root);
+        }
+
+        public T GetMin()
+        {
+            return this.GetMin(this.Root);
+        }
+
+        public T GetMax()
+        {
+            return this.GetMax(this.Root);
+        }
+
+        public void DeleteValue(T item)
+        {
+            this.DeleteValue(this.Root, item);
+        }
+
+        public void InOrderDisplay()
+        {
+            this.InOrderDisplay(this.Root);
+            Console.WriteLine("");
+        }
+
+        public void PreOrderDisplay()
+        {
+            this.PreOrderDisplay(this.Root);
+            Console.WriteLine("");
+        }
+
+        public void PostOrderDisplay()
+        {
+            this.PostOrderDisplay(this.Root);
+            Console.WriteLine("");
+        }
+
+        private void Insert(Node<T> root, T item)
         {
             if (root == null)
             {
@@ -35,7 +88,7 @@ namespace Collection
             }
         }
 
-        public int GetNodeCount(Node<T> root)
+        private int GetNodeCount(Node<T> root)
         {
             if (root == null)
             {
@@ -47,12 +100,12 @@ namespace Collection
             }
         }
 
-        public void DeleteTree(Node<T> root)
+        private void DeleteTree(Node<T> root)
         {
             root = null; 
         }
 
-        public bool IsInTree(Node<T> root, T item)
+        private bool IsInTree(Node<T> root, T item)
         {
             if(root == null)
             {
@@ -72,7 +125,7 @@ namespace Collection
             }
         }
 
-        public int GetHeight(Node<T> root)
+        private int GetHeight(Node<T> root)
         {
             if (root == null)
             {
@@ -86,7 +139,7 @@ namespace Collection
             }
         }
 
-        public T GetMin(Node<T> root)
+        private T GetMin(Node<T> root)
         {
             if (root == null)
             {
@@ -119,7 +172,7 @@ namespace Collection
             }
         }
 
-        public T GetMax(Node<T> root)
+        private T GetMax(Node<T> root)
         {
             if (root == null)
             {
@@ -200,13 +253,45 @@ namespace Collection
             }
         }
 
-        public void DeleteValue(Node<T> root, T item)
+        private void DeleteValue(Node<T> root, T item)
         {
             Node<T> parent;
             (root, parent) = this.Find(root, item, root);
-            Delete(root, parent);
+            this.Delete(root, parent);
         }
 
+        private void InOrderDisplay(Node<T> root)
+        {
+            if (root == null) return;
+            else
+            {
+                this.InOrderDisplay(root.Left);
+                Console.WriteLine($"{root.Item }");
+                this.InOrderDisplay(root.Right);
+            }
+        }
+
+        private void PreOrderDisplay(Node<T> root)
+        {
+            if (root == null) return;
+            else
+            {
+                Console.WriteLine($"{root.Item }");
+                this.PreOrderDisplay(root.Left);
+                this.PreOrderDisplay(root.Right);
+            }
+        }
+
+        private void PostOrderDisplay(Node<T> root)
+        {
+            if (root == null) return;
+            else
+            {
+                this.PostOrderDisplay(root.Left);
+                this.PostOrderDisplay(root.Right);
+                Console.WriteLine($"{root.Item }");
+            }
+        }
     }
 
     /// <summary>
