@@ -7,6 +7,7 @@ namespace Collection
     /// <summary>
     /// The Vector class
     /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class Vector<T>: IEnumerable<T>
     {
         public int Size { get; private set;  }
