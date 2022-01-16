@@ -155,9 +155,9 @@ namespace Collection
 
         public IEnumerator<T> GetEnumerator()
         {
-            foreach(T element in this.Array)
+            for (int i = 0; i < this.Size; i++)
             {
-                yield return element;
+                yield return this.Array[i];
             }
         }
 
