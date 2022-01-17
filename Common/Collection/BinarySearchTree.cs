@@ -7,7 +7,7 @@ namespace Collection
     /// The Binary Search Tree class
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    class BinarySearchTree<T>
+    public class BinarySearchTree<T>
     {
         private Node<T> Root { get; set; }
 
@@ -18,12 +18,12 @@ namespace Collection
 
         public void Insert(T item)
         {
-            this.Insert(this.Root, item);
+            this.Root = this.Insert(this.Root, item);
         }
 
         public void DeleteTree()
         {
-            this.DeleteTree(this.Root);
+            this.Root = null;
         }
 
         public bool IsInTree(T item)
@@ -34,6 +34,11 @@ namespace Collection
         public int GetHeight()
         {
             return this.GetHeight(this.Root);
+        }
+
+        public int GetNodeCount()
+        {
+            return this.GetNodeCount(this.Root);
         }
 
         public T GetMin()
@@ -48,7 +53,7 @@ namespace Collection
 
         public void DeleteValue(T item)
         {
-            this.DeleteValue(this.Root, item);
+            this.Root = this.DeleteValue(this.Root, item);
         }
 
         public void InOrderDisplay()
@@ -69,7 +74,7 @@ namespace Collection
             Console.WriteLine("");
         }
 
-        private void Insert(Node<T> root, T item)
+        private Node<T> Insert(Node<T> root, T item)
         {
             if (root == null)
             {
@@ -77,15 +82,16 @@ namespace Collection
             }
             else
             {
-                if (Comparer<T>.Default.Compare(item, root.Item) > 0)
+                if (Comparer<T>.Default.Compare(item, root.Item) < 0)
                 {
-                    this.Insert(root.Right, item);
+                    root.Left =  this.Insert(root.Left, item); 
                 }
                 else
                 {
-                    this.Insert(root.Left, item);
+                    root.Right = this.Insert(root.Right, item);
                 }
             }
+            return root;
         }
 
         private int GetNodeCount(Node<T> root)
@@ -100,11 +106,6 @@ namespace Collection
             }
         }
 
-        private void DeleteTree(Node<T> root)
-        {
-            root = null; 
-        }
-
         private bool IsInTree(Node<T> root, T item)
         {
             if(root == null)
@@ -115,13 +116,13 @@ namespace Collection
             {
                 return true;
             }
-            else if (Comparer<T>.Default.Compare(item, root.Item) > 0)
+            else if (Comparer<T>.Default.Compare(item, root.Item) < 0)
             {
-                return this.IsInTree(root.Right, item);
+                return this.IsInTree(root.Left, item);
             } 
             else
             {
-                return this.IsInTree(root.Left, item);
+                return this.IsInTree(root.Right, item);
             }
         }
 
@@ -129,13 +130,13 @@ namespace Collection
         {
             if (root == null)
             {
-                return 0;
+                return -1;
             }
             else
             {
                 int left = this.GetHeight(root.Left);
                 int right = this.GetHeight(root.Right);
-                return left < right ? right + 1 : left + 1;
+                return (left < right ? right : left) + 1;
             }
         }
 
@@ -155,23 +156,6 @@ namespace Collection
             }
         }
 
-        private (Node<T>, Node<T>) GetMinNode(Node<T> root, Node<T> parent = null)
-        {
-            if (root == null)
-            {
-                throw new InvalidOperationException("No elements in the tree");
-            }
-            if (root.Left == null)
-            {
-                return (root, parent);
-            }
-            else
-            {
-                parent = root;
-                return this.GetMinNode(root.Left, parent);
-            }
-        }
-
         private T GetMax(Node<T> root)
         {
             if (root == null)
@@ -188,76 +172,37 @@ namespace Collection
             }
         }
 
-        private (Node<T>, Node<T>) Find(Node<T> root, T item, Node<T> parent = null)
+        private Node<T> DeleteValue(Node<T> root, T item)
         {
             if (root == null)
             {
-                throw new InvalidOperationException($"No elements {item} in the tree");
+                return root;
             }
-            else if (item.Equals(root.Item))
+            if (Comparer<T>.Default.Compare(item, root.Item) < 0)
             {
-                return (root, parent);
+                root.Left = this.DeleteValue(root.Left, item);
             }
-            else if (Comparer<T>.Default.Compare(item, root.Item) >= 0)
+            else if (Comparer<T>.Default.Compare(item, root.Item) > 0)
             {
-                parent = root;
-                return this.Find(root.Right, item, parent);
+                root.Right = this.DeleteValue(root.Right, item);
             }
             else
             {
-                parent = root;
-                return this.Find(root.Left, item, parent);
-            }
-        }
-
-        private void Delete(Node<T> root, Node<T> parent)
-        {
-            if(root.Left == null && root.Right == null)
-            {
-                if (root.Item.Equals(parent.Left.Item))
+                if (root.Left == null)
                 {
-                    parent.Left = null;
-                } 
-                else
-                {
-                    parent.Right = null;
+                    return root.Right;
                 }
-            }
-            else if (root.Left == null)
-            {
-                if (root.Item.Equals(parent.Left.Item))
+                else if (root.Right == null)
                 {
-                    parent.Left = root.Right;
+                    return root.Left;
                 }
                 else
                 {
-                    parent.Right = root.Right;
+                    root.Item = this.GetMin(root.Right);
+                    root.Right = this.DeleteValue(root.Right, root.Item);
                 }
             }
-            else if (root.Right == null)
-            {
-                if (root.Item.Equals(parent.Left.Item))
-                {
-                    parent.Left = root.Left;
-                }
-                else
-                {
-                    parent.Right = root.Left;
-                }
-            }
-            else
-            {
-                (Node<T> min, Node<T> minParent) = this.GetMinNode(root.Right, parent);
-                root.Right.Item = min.Item;
-                this.Delete(min, minParent);
-            }
-        }
-
-        private void DeleteValue(Node<T> root, T item)
-        {
-            Node<T> parent;
-            (root, parent) = this.Find(root, item, root);
-            this.Delete(root, parent);
+            return root;
         }
 
         private void InOrderDisplay(Node<T> root)
@@ -266,7 +211,7 @@ namespace Collection
             else
             {
                 this.InOrderDisplay(root.Left);
-                Console.WriteLine($"{root.Item} ");
+                Console.Write($"{root.Item} ");
                 this.InOrderDisplay(root.Right);
             }
         }
@@ -276,7 +221,7 @@ namespace Collection
             if (root == null) return;
             else
             {
-                Console.WriteLine($"{root.Item} ");
+                Console.Write($"{root.Item} ");
                 this.PreOrderDisplay(root.Left);
                 this.PreOrderDisplay(root.Right);
             }
@@ -289,7 +234,7 @@ namespace Collection
             {
                 this.PostOrderDisplay(root.Left);
                 this.PostOrderDisplay(root.Right);
-                Console.WriteLine($"{root.Item} ");
+                Console.Write($"{root.Item} ");
             }
         }
     }
@@ -309,8 +254,6 @@ namespace Collection
         public Node(T item)
         {
             this.Item = item;
-            this.Right = null;
-            this.Left = null;
         }
     }
 }

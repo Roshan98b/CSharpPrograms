@@ -1,12 +1,11 @@
-﻿using System;
-
-namespace DataStructures
+﻿namespace DataStructures
 {
     class Program
     {
         static void Main(string[] args)
         {
-            VectorTest.Validate();
+            new VectorTest().Validate();
+            new BinarySearchTreeTest().Validate();
         }
 
     }

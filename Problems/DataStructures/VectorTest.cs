@@ -5,12 +5,12 @@ using Collection;
 
 namespace DataStructures
 {
-    internal class VectorTest
+    internal class VectorTest: IDataStructuresTest
     {
-        public static void Validate()
+        private static readonly Vector<int> vector = new Vector<int>();
+        
+        public void Validate()
         {
-            Vector<int> vector = new Vector<int>();
-
             Console.WriteLine($"Size: {vector.Size}");
             Console.WriteLine($"Capacity: {vector.Capacity}");
 
@@ -52,7 +52,7 @@ namespace DataStructures
             Console.WriteLine($"Element at position 4 : {vector.At(3)}");
         }
 
-        static void Display<T>(Vector<T> vector)
+        private static void Display<T>(Vector<T> vector)
         {
             foreach (T element in vector)
             {

@@ -88,7 +88,7 @@ namespace Collection
             }
             this.SizeCheck();
             T value = this.Array[this.Size - 1];
-            this.Array[this.Size - 1] = default(T);
+            this.Array[this.Size - 1] = default;
             this.Size--;
             return value;
         }
@@ -105,7 +105,7 @@ namespace Collection
             {
                 this.Array[i-1] = this.Array[i];
             }
-            this.Array[this.Size - 1] = default(T);
+            this.Array[this.Size - 1] = default;
             this.Size--;
         }
 
@@ -136,7 +136,7 @@ namespace Collection
             }
             for (int i = 1; i <= seek; i++)
             {
-                this.Array[Size - i] = default(T);
+                this.Array[Size - i] = default;
             }
             this.Size -= seek;
             return seek != 0;
