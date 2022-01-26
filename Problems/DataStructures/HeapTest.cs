@@ -22,13 +22,6 @@ namespace DataStructures
             heap.Insert(31);
             Display(heap);
 
-            int[] sorted = heap.Sort(new int[] { 35, 33, 42, 10, 14, 19, 27, 44, 26, 31 });
-            foreach (int element in sorted)
-            {
-                Console.Write($"{element} ");
-            }
-            Console.WriteLine("");
-
             heap.Delete(14);
             Display(heap);
 
