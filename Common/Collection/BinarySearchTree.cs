@@ -11,6 +11,8 @@ namespace Collection
     {
         private Node<T> Root { get; set; }
 
+        private List<T> order = new List<T>();
+
         public BinarySearchTree()
         {
             this.Root = null;
@@ -72,6 +74,11 @@ namespace Collection
         {
             this.PostOrderDisplay(this.Root);
             Console.WriteLine("");
+        }
+
+        public bool IsValidBST()
+        {
+            return IsValidBST(this.Root);
         }
 
         private Node<T> Insert(Node<T> root, T item)
@@ -237,6 +244,42 @@ namespace Collection
                 Console.Write($"{root.Item} ");
             }
         }
+
+        private bool IsValidBST(Node<T> root)
+        {
+            if (root == null)
+            {
+                return true;
+            }
+            InorderAdd(root);
+            if (order.Count >= 2)
+            {
+                for (int i = 1; i < order.Count; i++)
+                {
+                    if (Comparer<T>.Default.Compare(order[i - 1], order[i]) >= 0)
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private void InorderAdd(Node<T> root)
+        {
+            if (root == null)
+            {
+                return;
+            }
+            InorderAdd(root.Left);
+            order.Add(root.Item);
+            InorderAdd(root.Right);
+        }
+
     }
 
     /// <summary>
