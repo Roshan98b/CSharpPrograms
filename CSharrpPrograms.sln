@@ -35,7 +35,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortedSquares", "Problems\S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PageCompression", "Problems\PageCompression\PageCompression.csproj", "{B49B8819-E7B5-46AA-A956-B66501569FD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Permutations", "Problems\Permutations\Permutations.csproj", "{ABB3ABE0-C645-4826-B2E7-AADABE9070DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Permutations", "Problems\Permutations\Permutations.csproj", "{ABB3ABE0-C645-4826-B2E7-AADABE9070DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountIslands", "Problems\CountIslands\CountIslands.csproj", "{EE45B85B-E180-4DDF-AF50-2F8994ECB215}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -103,6 +105,10 @@ Global
 		{ABB3ABE0-C645-4826-B2E7-AADABE9070DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABB3ABE0-C645-4826-B2E7-AADABE9070DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABB3ABE0-C645-4826-B2E7-AADABE9070DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE45B85B-E180-4DDF-AF50-2F8994ECB215}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE45B85B-E180-4DDF-AF50-2F8994ECB215}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE45B85B-E180-4DDF-AF50-2F8994ECB215}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE45B85B-E180-4DDF-AF50-2F8994ECB215}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -123,6 +129,7 @@ Global
 		{44CBD3F6-634E-4BF3-93B6-055BF88C8075} = {42C76B81-CA49-4ED3-BD39-ECD0E0CA0334}
 		{B49B8819-E7B5-46AA-A956-B66501569FD6} = {42C76B81-CA49-4ED3-BD39-ECD0E0CA0334}
 		{ABB3ABE0-C645-4826-B2E7-AADABE9070DA} = {42C76B81-CA49-4ED3-BD39-ECD0E0CA0334}
+		{EE45B85B-E180-4DDF-AF50-2F8994ECB215} = {42C76B81-CA49-4ED3-BD39-ECD0E0CA0334}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2F82A49A-07D4-49DF-A567-2A7A8631C6F4}
