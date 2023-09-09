@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedListSwapNodes", "Prob
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkedListSwapPairs", "Problems\LinkedListSwapPairs\LinkedListSwapPairs.csproj", "{12001B44-4E0B-4EBC-BF35-A2F8DC6DA86C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseLinkedList2", "Problems\ReverseLinkedList2\ReverseLinkedList2.csproj", "{362A8FC2-4903-496C-962E-130536411704}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -127,6 +129,10 @@ Global
 		{12001B44-4E0B-4EBC-BF35-A2F8DC6DA86C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12001B44-4E0B-4EBC-BF35-A2F8DC6DA86C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12001B44-4E0B-4EBC-BF35-A2F8DC6DA86C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{362A8FC2-4903-496C-962E-130536411704}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{362A8FC2-4903-496C-962E-130536411704}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{362A8FC2-4903-496C-962E-130536411704}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{362A8FC2-4903-496C-962E-130536411704}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -151,6 +157,7 @@ Global
 		{40CE3B0B-5CD6-462E-902D-049EC858AD88} = {42C76B81-CA49-4ED3-BD39-ECD0E0CA0334}
 		{16F4FF64-8E45-404E-942C-854680E9EAEB} = {42C76B81-CA49-4ED3-BD39-ECD0E0CA0334}
 		{12001B44-4E0B-4EBC-BF35-A2F8DC6DA86C} = {42C76B81-CA49-4ED3-BD39-ECD0E0CA0334}
+		{362A8FC2-4903-496C-962E-130536411704} = {42C76B81-CA49-4ED3-BD39-ECD0E0CA0334}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2F82A49A-07D4-49DF-A567-2A7A8631C6F4}
