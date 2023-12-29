@@ -59,6 +59,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReverseVowels", "Problems\R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongestOneSubArray", "Problems\LongestOneSubArray\LongestOneSubArray.csproj", "{4A77C771-1119-4F19-8C54-B70F981BE7DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FraudActivity", "Problems\FraudActivity\FraudActivity.csproj", "{56727756-058A-4BD8-915C-CEBFD558D3E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetMaxLengthSequence", "Problems\GetMaxLengthSequence\GetMaxLengthSequence.csproj", "{FEFF3AB7-0AD1-41E4-9ED6-65FD01724508}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -169,6 +173,14 @@ Global
 		{4A77C771-1119-4F19-8C54-B70F981BE7DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A77C771-1119-4F19-8C54-B70F981BE7DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A77C771-1119-4F19-8C54-B70F981BE7DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56727756-058A-4BD8-915C-CEBFD558D3E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56727756-058A-4BD8-915C-CEBFD558D3E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56727756-058A-4BD8-915C-CEBFD558D3E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56727756-058A-4BD8-915C-CEBFD558D3E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEFF3AB7-0AD1-41E4-9ED6-65FD01724508}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEFF3AB7-0AD1-41E4-9ED6-65FD01724508}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEFF3AB7-0AD1-41E4-9ED6-65FD01724508}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEFF3AB7-0AD1-41E4-9ED6-65FD01724508}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -200,6 +212,8 @@ Global
 		{FE5839CD-E9D8-4560-8DAE-6E2EACE890B5} = {42C76B81-CA49-4ED3-BD39-ECD0E0CA0334}
 		{A2DB6CCB-8EDB-45D2-A09D-2D344EEBABB5} = {42C76B81-CA49-4ED3-BD39-ECD0E0CA0334}
 		{4A77C771-1119-4F19-8C54-B70F981BE7DA} = {42C76B81-CA49-4ED3-BD39-ECD0E0CA0334}
+		{56727756-058A-4BD8-915C-CEBFD558D3E2} = {42C76B81-CA49-4ED3-BD39-ECD0E0CA0334}
+		{FEFF3AB7-0AD1-41E4-9ED6-65FD01724508} = {42C76B81-CA49-4ED3-BD39-ECD0E0CA0334}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2F82A49A-07D4-49DF-A567-2A7A8631C6F4}
