@@ -57,6 +57,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReverseSubstringCompare", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReverseVowels", "Problems\ReverseVowels\ReverseVowels.csproj", "{A2DB6CCB-8EDB-45D2-A09D-2D344EEBABB5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongestOneSubArray", "Problems\LongestOneSubArray\LongestOneSubArray.csproj", "{4A77C771-1119-4F19-8C54-B70F981BE7DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -163,6 +165,10 @@ Global
 		{A2DB6CCB-8EDB-45D2-A09D-2D344EEBABB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2DB6CCB-8EDB-45D2-A09D-2D344EEBABB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2DB6CCB-8EDB-45D2-A09D-2D344EEBABB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A77C771-1119-4F19-8C54-B70F981BE7DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A77C771-1119-4F19-8C54-B70F981BE7DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A77C771-1119-4F19-8C54-B70F981BE7DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A77C771-1119-4F19-8C54-B70F981BE7DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -193,6 +199,7 @@ Global
 		{9A6AFD23-04E9-4CDD-9ACA-A9C21697E8BB} = {42C76B81-CA49-4ED3-BD39-ECD0E0CA0334}
 		{FE5839CD-E9D8-4560-8DAE-6E2EACE890B5} = {42C76B81-CA49-4ED3-BD39-ECD0E0CA0334}
 		{A2DB6CCB-8EDB-45D2-A09D-2D344EEBABB5} = {42C76B81-CA49-4ED3-BD39-ECD0E0CA0334}
+		{4A77C771-1119-4F19-8C54-B70F981BE7DA} = {42C76B81-CA49-4ED3-BD39-ECD0E0CA0334}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2F82A49A-07D4-49DF-A567-2A7A8631C6F4}
